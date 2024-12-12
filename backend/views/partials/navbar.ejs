@@ -1,0 +1,129 @@
+<style>
+    .suggestions {
+        position: absolute;
+        top: 100%;
+        /* Position it right below the input */
+        left: 0;
+        right: 0;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-top: none;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    .suggestion-item {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .suggestion-item:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Listen for input events on the search input field
+        $('#searchInput').on('input', function () {
+            const query = $(this).val(); // Get the current value of the input field
+
+            if (query.length === 0) {
+                $('#suggestions').empty(); // Clear suggestions if the input is empty
+                return;
+            }
+
+            // Make an AJAX request to the backend to get suggestions
+            $.ajax({
+                url: '/api/suggestions', // The API endpoint to get suggestions
+                method: 'GET', // HTTP method to use
+                data: { q: query }, // The query parameter to send to the backend
+                success: function (data) {
+                    $('#suggestions').empty(); // Clear any existing suggestions
+                    data.forEach(suggestion => {
+                        // Append each suggestion as a div with the class 'suggestion-item'
+                        $('#suggestions').append(`<div class="suggestion-item">${suggestion}</div>`);
+                    });
+
+                    // Add a click event listener to each suggestion item
+                    $('.suggestion-item').on('click', function () {
+                        $('#searchInput').val($(this).text()); // Set the input value to the clicked suggestion
+                        $('#suggestions').empty(); // Clear the suggestions
+                    });
+                }
+            });
+        });
+
+        // Handle search button click
+        $('.btn-outline-success').on('click', function () {
+            const query = $('#searchInput').val(); // Get the value from the search input
+            if (query) {
+                window.location.href = `/introduce?name=${encodeURIComponent(query)}`; // Redirect to the /introduce route with the query parameter
+            }
+        });
+
+        // Close suggestions when clicking outside the search input or suggestions
+        $(document).click(function (e) {
+            if (!$(e.target).closest('#searchInput').length && !$(e.target).closest('#suggestions').length) {
+                $('#suggestions').empty();
+            }
+        });
+    });
+</script>
+
+<nav class="navbar navbar-expand-xl fixed-top" style="background-color: #8BC34A;" aria-label="Sixth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/images/Black and Gold Foil Football Club Logo (1).png" alt="Logo" style="height: 40px; margin-right: 10px;">
+            FootyFieldReserve</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06"
+            aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample06">
+            <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/about">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                        aria-expanded="false">Activity</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/frendlygame">Friendly-Game</a></li>
+                        <li><a class="dropdown-item" href="/frendlycup">Friendly-Cup</a></li>
+                        <li><a class="dropdown-item" href="/child">Children-Time</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form method="post" action="/submit">
+                <div class="text-end">
+                    <button type="submit" class="btn btn-outline-success me-2" name="action"
+                        value="login">Login</button>
+                    <button type="submit" class="btn btn-outline-success me-2" name="action" value="sign-up"
+                        style="margin-right: 10px;">Sign-up</button>
+                    <button type="submit" class="btn btn-outline-success me-2" name="action"
+                        value="connect">Admin</button>
+                </div>
+            </form>
+
+            <form class="d-flex position-relative" onsubmit="return false;">
+                <div class="input-group">
+                    <input class="form-control me-2" type="search" id="searchInput" placeholder="Search"
+                        aria-label="Search" autocomplete="off">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+                <div id="suggestions" class="suggestions"></div>
+            </form>
+        </div>
+    </div>
+</nav>
+

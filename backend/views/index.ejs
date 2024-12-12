@@ -1,0 +1,237 @@
+<%- include("partials/header.ejs") %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<style>
+
+    html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.bg, .bg2, .bg3 {
+  position: fixed;
+  top: 0;
+  left: -50%;
+  right: -50%;
+  bottom: 0;
+  z-index: -1;
+}
+
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #388E3C 50%);
+  opacity: .5;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+</style>
+<%- include("partials/navbar.ejs") %>
+
+
+<div class="container col-xxl-8 px-4 py-5 ">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="/images/footbal.jpg"
+                class="d-block mx-lg-auto img-fluid shadow-lg p-3 mb-5 bg-body-tertiary rounded" alt="Bootstrap Themes"
+                width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+            <em>
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style="color: #ffffff !important;">DES CLIENTS
+                RAVIS AVEC LA RÉSERVATION EN LIGNE</h1></em>
+            <p class="lead" style="color: #ffffff;">Offrez de la flexibilité à vos clients en leur permettant de réserver à tout moment leur
+                cours
+                ou leur terrain et quel que soit l'endroit où ils se trouvent,Le meilleur moyen de faire du sport sans
+                être membre d'un club. </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="/reserv"><button type="button" class="btn btn-outline-success btn-lg px-4 me-md-2">Decouvrer les Offres</button></a>
+                <a href="/info"><button type="button" class="btn btn-outline-success btn-lg px-4">More...</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center my-5">
+    <l-helix size="100" speed="2.5" color="#ffffff"></l-helix>
+</div>
+
+
+
+<div class="container px-4 py-5" id="featured-3">
+    <em>
+    <h1 class="display-5 fw-bold text-body-emphasis pb-2 border-bottom" style="color: #ffffff !important;">Des
+        réservations
+        faciles et accessibles</h1></em>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div
+            class="feature col d-flex flex-column h-100 p-5 pb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded product-device shadow-sm d-none d-md-block">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center  fs-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                    class="bi bi-clock-history" viewBox="0 0 16 16">
+                    <path
+                        d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z" />
+                    <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z" />
+                    <path
+                        d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5" />
+                </svg>
+            </div>
+            <h3 class="fs-2 text-body-emphasis" style="color: #80AF81 !important;"><strong>7j/7 et 24h/24</strong></h3>
+            <p>Notre site web est disponible 24h/24 et 7j/7, vous permettant de réserver un terrain de football à tout
+                moment. Réservez
+                facilement et rapidement, sans contraintes de temps. Profitez de la flexibilité et de la commodité
+                offertes par notre
+                plateforme !</p>
+            <a href="/info" class="icon-link">
+                Call to action
+            </a>
+        </div>
+        <div
+            class="feature col d-flex flex-column h-100 p-5 pb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded product-device shadow-sm d-none d-md-block">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center  fs-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                    class="bi bi-card-heading" viewBox="0 0 16 16">
+                    <path
+                        d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z" />
+                    <path
+                        d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </div>
+            <h3 class="fs-2 text-body-emphasis" style="color: #80AF81 !important;"><strong>Depuis Votre site
+                    web</strong></h3>
+            <p>Avec notre site web, réservez votre terrain de football sans vous déplacer. Fini les allers-retours !
+                Tout est simple et
+                rapide. En quelques clics, trouvez et réservez le terrain parfait. Profitez pleinement de chaque match
+                grâce à notre
+                plateforme pratique !</p>
+            <a href="/info" class="icon-link">
+                Call to action
+            </a>
+        </div>
+        <div
+            class="feature col d-flex flex-column h-100 p-5 pb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded product-device shadow-sm d-none d-md-block">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                    class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
+                    <path
+                        d="M9.752 6.193c.599.6 1.73.437 2.528-.362s.96-1.932.362-2.531c-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532" />
+                    <path
+                        d="M15.811 3.312c-.363 1.534-1.334 3.626-3.64 6.218l-.24 2.408a2.56 2.56 0 0 1-.732 1.526L8.817 15.85a.51.51 0 0 1-.867-.434l.27-1.899c.04-.28-.013-.593-.131-.956a9 9 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.662-2.191-1.277-.614-.615-1.079-1.379-1.275-2.195l-.203-.083a10 10 0 0 0-.655-.248c-.363-.119-.675-.172-.955-.132l-1.896.27A.51.51 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.55 11.087.582 12.623.208c.89-.217 1.59-.232 2.08-.188.244.023.435.06.57.093q.1.026.16.045c.184.06.279.13.351.295l.029.073a3.5 3.5 0 0 1 .157.721c.055.485.051 1.178-.159 2.065m-4.828 7.475.04-.04-.107 1.081a1.54 1.54 0 0 1-.44.913l-1.298 1.3.054-.38c.072-.506-.034-.993-.172-1.418a9 9 0 0 0-.164-.45c.738-.065 1.462-.38 2.087-1.006M5.205 5c-.625.626-.94 1.351-1.004 2.09a9 9 0 0 0-.45-.164c-.424-.138-.91-.244-1.416-.172l-.38.054 1.3-1.3c.245-.246.566-.401.91-.44l1.08-.107zm9.406-3.961c-.38-.034-.967-.027-1.746.163-1.558.38-3.917 1.496-6.937 4.521-.62.62-.799 1.34-.687 2.051.107.676.483 1.362 1.048 1.928.564.565 1.25.941 1.924 1.049.71.112 1.429-.067 2.048-.688 3.079-3.083 4.192-5.444 4.556-6.987.183-.771.18-1.345.138-1.713a3 3 0 0 0-.045-.283 3 3 0 0 0-.3-.041Z" />
+                    <path
+                        d="M7.009 12.139a7.6 7.6 0 0 1-1.804-1.352A7.6 7.6 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z" />
+                </svg>
+            </div>
+            <h3 class="fs-2 text-body-emphasis" style="color: #80AF81!important;"> <strong>le Plaisir du
+                    Football</strong></h3>
+            <p>Vous aimez le football ? Vous souhaitez le pratiquer en toute convivialité, entre amis, collègues de
+                travail,
+                coéquipiers de club ou en famille, pour de purs moments de plaisir et de détente ?
+                Rejoignez-nous pour pour profiter pleinement de l’ensemble de nos offres.</p>
+            <a href="/info" class="icon-link">
+                Call to action
+                <svg class="bi">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+<br>
+<%- include("partials/diaporama.ejs") %>
+    <br>
+    <br>
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center ">
+        <div class="col-md-6 p-lg-5 mx-auto my-5" style="color: #ffffff;">
+            <h1 class="display-3 fw-bold">Venez vite !</h1>
+            <h3 class="fw-normal  mb-3">Rejoignez-nous pour pour profiter pleinement de l’ensemble de nos offres.</h3>
+            <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                <a class="icon-link" href="/info">
+                    Learn more
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor"
+                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </a>
+                <a class="icon-link" href="/reserv">
+                    reservez votre terain
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor"
+                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="align-items: center; padding:50px; margin:40px;">
+        <div id="map" style="height: 600px; width: 100%;"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Use EJS to safely output the fields data as JSON
+        var fieldsData = JSON.parse('<%- JSON.stringify(fields) %>');
+
+        // Initialize the map and set its view to Khouribga, Morocco
+        var map = L.map('map').setView([31.6295, -7.9811], 12);
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Function to geocode addresses and add markersnode index.js
+        function geocodeAndAddMarkers() {
+            var geocodeApiKey = 'c133f2351c974f1b909257836258c778'; // Replace with your OpenCage API key
+
+            fieldsData.forEach(function (field) {
+                var address = field.address;
+                fetch(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(address)}&key=${geocodeApiKey}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.results && data.results.length > 0) {
+                            var location = data.results[0].geometry;
+                            console.log('Geocoded location for address:', address, 'is:', location);
+                            L.marker([location.lat, location.lng]).addTo(map)
+                                .bindPopup(field.name)
+                                .openPopup();
+                        } else {
+                            console.error('No results found for address:', address);
+                        }
+                    })
+                    .catch(error => console.error('Geocoding error:', error));
+            });
+        }
+
+        // Call the function to add markers
+        geocodeAndAddMarkers();
+    </script>
+
+
+<br><br><br>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/helix.js"></script>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,138 @@
+<%- include("partials/header.ejs") %>
+    <%- include("partials/navbar.ejs") %>
+
+        <style>
+            .form-container {
+                background-color: #f8f9fa;
+                /* Light background color */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
+                /* Soft shadow */
+                padding: 2rem;
+                /* Spacing around the form */
+                border-radius: 10px;
+                /* Rounded corners */
+            }
+        </style>
+
+        <br><br><br><br>
+        <br><br><br><br>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="w-100 form-container" style="max-width: 33%;">
+                <strong><em>
+                        <h1>Reservation Form</h1>
+                    </em></strong>
+                <br>
+                <form class="row g-3 needs-validation" novalidate id="reservationForm" method="post" onsubmit="return validateForm()" action="/addreserv">
+                    <div class="col-md-12">
+                        <label for="validationCustom01" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name="user" value="<%= nom %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom02" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<%= gmail %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustomUsername" class="form-label">Phone Number</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">+212</span>
+                            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+                                aria-describedby="inputGroupPrepend" value="<%= phone %>" required>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom01" class="form-label">Field Name</label>
+                        <input type="text" class="form-control" id="fieldName" name="field"  value="<%= field %>"
+                            required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom03" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="location" name="location" value="<%= location %>" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom01" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description" name="description" value="<%= fieldDescription %>"
+                            required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom05" class="form-label">Price Per Hour</label>
+                        <input type="text" class="form-control" id="price" name="price" value="<%= fieldPrice %>" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom05" class="form-label">Date</label>
+                        <input type="text" class="form-control" id="date" name="date" value="<%= date %>" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom05" class="form-label">Start-Time</label>
+                        <input type="text" class="form-control" id="startTime" name="start" value="<%= startTime %>"
+                            required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom05" class="form-label">End-Time</label>
+                        <input type="text" class="form-control" id="endTime" name="end" value="<%= endTime %>" required>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                Agree to terms and conditions
+                            </label>
+                        </div>
+                    </div>
+                    <br><br><br><br>
+                    <div class="col-12">
+                        <button type="submit" class="shadow__btn" >Submit Reservation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <style>
+            .shadow__btn {
+                padding: 10px 20px;
+                border: none;
+                font-size: 17px;
+                color: #fff;
+                border-radius: 7px;
+                letter-spacing: 4px;
+                font-weight: 700;
+                text-transform: uppercase;
+                transition: 0.5s;
+                transition-property: box-shadow;
+                background: #8BC34A;
+                /* Updated background color */
+                box-shadow: 0 0 25px #8BC34A;
+                /* Updated box-shadow color */
+            }
+
+            .shadow__btn:hover {
+                box-shadow: 0 0 5px #8BC34A,
+                    0 0 25px #8BC34A,
+                    0 0 50px #8BC34A,
+                    0 0 100px #8BC34A;
+                /* Updated hover shadow color */
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script>
+            const { jsPDF } = window.jspdf;
+
+            function validateForm() {
+                const form = document.getElementById('reservationForm');
+                if (form.checkValidity() === false) {
+                    form.reportValidity();
+                    return false; // Prevent form submission
+                }
+                return true; // Allow form submission
+            }
+        </script>
+            <br><br>
+
+        <%- include("partials/footer.ejs") %>

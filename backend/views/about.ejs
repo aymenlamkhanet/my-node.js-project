@@ -1,0 +1,130 @@
+<%- include("partials/header.ejs") %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .bg,
+    .bg2,
+    .bg3 {
+        position: fixed;
+        top: 0;
+        left: -50%;
+        right: -50%;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #6c3 50%, #388E3C 50%);
+        opacity: .5;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>
+<%- include("partials/navbar.ejs") %>
+
+<div class="px-4 pt-5 my-5 text-center border-bottom"><br><br><br>
+    <em><h1 class="display-4 fw-bold text-body-emphasis"
+        style="color: #ffffff !important; display:flex; justify-content:space-around;">FootyFieldReserve</h1></em> 
+   <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Bienvenue chez FootyFieldReserve, votre destination ultime pour des réservations de terrains de football faciles et
+        pratiques. Notre plateforme est conçue pour les amateurs de football, les équipes et les organisateurs d'événements,
+        offrant une expérience de réservation fluide et efficace. Que vous planifiez un match amical entre amis, une compétition
+        avec votre club ou un événement de team-building d'entreprise, FootyFieldReserve est là pour vous.
+        
+        Notre Mission
+        Chez FootyFieldReserve, notre mission est de rendre le football accessible à tous. Nous visons à simplifier le processus
+        de recherche et de réservation de terrains de football de haute qualité, garantissant que vous passez plus de temps à
+        jouer et moins de temps à planifier. En quelques clics, vous pouvez réserver le lieu idéal pour votre match, sans les
+        tracas des appels téléphoniques ou des visites en personne.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <a href="/"><button type="button" class="btn btn-outline-success btn-lg px-4 me-sm-3">Page d'accueil</button></a>
+            <a href="/info"><button type="button" class="btn btn-outline-success btn-lg px-4">plus...</button></a>
+        </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+            <img src="/images/1.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
+                width="700" height="500" loading="lazy">
+        </div>
+    </div>
+</div>
+<br><br>
+
+<div class="container-fluid text-center">
+    <h2>SERVICES</h2>
+    <h4>Que Nous Offrons</h4>
+    <br><br><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-off"></span>
+            <h4>Disponibilité 24/7</h4>
+            <p>Notre plateforme est accessible à tout moment, vous permettant de réserver un terrain de football quand cela vous
+            convient. Plus besoin de vous soucier des heures de bureau ou d'attendre des réponses - réservez quand cela vous
+            arrange.</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-heart"></span>
+            <h4>Large Choix de Lieux</h4>
+            <p>Nous collaborons avec de nombreux terrains de football à travers la région, offrant une variété de lieux parmi lesquels
+            choisir. Que vous préfériez une installation intérieure ou un terrain extérieur, vous trouverez l'endroit parfait sur
+            FootyFieldReserve.</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-lock"></span>
+            <h4>Assurance Qualité</h4>
+            <p>Nous nous engageons à fournir des installations de premier ordre à nos utilisateurs. Tous les terrains répertoriés sur
+            notre plateforme sont vérifiés pour garantir qu'ils répondent à des normes de qualité et de sécurité élevées.</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-leaf"></span>
+            <h4>Interface Conviviale</h4>
+            <p>Notre site web est conçu pour une expérience utilisateur optimale. L'interface intuitive facilite la recherche de
+            terrains disponibles, la visualisation des équipements et la finalisation de votre réservation en quelques minutes.</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-certificate"></span>
+            <h4>Réservation Flexibles</h4>
+            <p>Que vous ayez besoin d'un terrain pour une heure, une journée ou une réservation récurrente, nous offrons des options de
+            réservation flexibles pour répondre à vos besoins. Planifiez à l'avance ou faites des réservations de dernière minute
+            avec facilité.</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-wrench"></span>
+            <h4 style="color:#303030;">Paiements Sécurisés</h4>
+            <p>Nous proposons un processus de paiement sécurisé et sans tracas. Vous pouvez payer en ligne via notre plateforme,
+            garantissant une transaction fluide et sécurisée à chaque fois.</p>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<%- include("partials/footer.ejs") %>

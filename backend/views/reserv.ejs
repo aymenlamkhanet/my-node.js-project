@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="/styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 250px;
+        }
+
+        .reflect {
+            -webkit-box-reflect: below 10px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.5)));
+            -webkit-box-reflect: below 10px linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, 0.5));
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.63);
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.651);
+        }
+
+        .field-name {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.13);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .flip-2-ver-left-2 {
+            -webkit-animation: flip-2-ver-left-2 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+            animation: flip-2-ver-left-2 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        }
+
+        .customer-satisfaction {
+        position: relative;
+        background: linear-gradient(135deg, #ffffff 0%, #a8d5e2 100%);
+        padding: 40px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: gradientAnimation 6s ease infinite;
+    }
+
+    .customer-satisfaction::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.322), #8BC34A, rgba(255, 255, 255, 0.1));
+        background-size: 400% 400%;
+        z-index: 1;
+        animation: gradientOverlay 15s ease infinite;
+    }
+
+    .customer-satisfaction .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .customer-satisfaction h2 {
+        color: #00796b;
+        font-family: Georgia, serif;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+    }
+
+    .customer-satisfaction p {
+        color: #004d40;
+        font-family: Georgia, serif;
+        line-height: 1.6;
+        font-size: 1.2rem;
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+
+    @keyframes gradientOverlay {
+        0% {
+            background-position: 0% 0%;
+        }
+        100% {
+            background-position: 100% 100%;
+        }
+    }
+
+    .dark-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity to control the darkness */
+        z-index: 1;
+    }
+
+    .card-img-overlay {
+        z-index: 2;
+    }
+
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .field-name {
+        margin-top: 10px;
+        font-size: 1.2em;
+        color: #333;
+        text-align: center;
+        font-family: 'Georgia', serif;
+        background-color: rgba(255, 255, 255, 0.8); /* Optional: add a slight background to improve readability */
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .transparent-button {
+        background: transparent; /* Makes the background transparent */
+        border: 2px solid #000; /* Add a border if you want */
+        color: #000; /* Text color */
+        padding: 10px 20px; /* Adjust padding as needed */
+        font-size: 16px; /* Adjust font size */
+        cursor: pointer; /* Changes cursor to pointer on hover */
+        border-radius: 5px; /* Optional: Adds rounded corners */
+        transition: background 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    }
+
+    .transparent-button:hover {
+        background: #000; /* Change background color on hover */
+        color: #fff; /* Change text color on hover */
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <style>
+        html {
+            height: 100%;
+        }
+    
+        body {
+            margin: 0;
+        }
+    
+        .bg,
+        .bg2,
+        .bg3 {
+            position: fixed;
+            top: 0;
+            left: -50%;
+            right: -50%;
+            bottom: 0;
+            z-index: -1;
+        }
+    
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #6c3 50%, #388E3C 50%);
+            opacity: .5;
+        }
+    
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+    
+        .bg3 {
+            animation-duration: 5s;
+        }
+    
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+    
+            100% {
+                transform: translateX(25%);
+            }
+    
+        }
+    
+        .white-bg-transparent {
+            background-color: rgba(255, 255, 255, 0);
+            /* Adjust 0.8 to the desired opacity level */
+        }
+    </style>
+    <%- include("partials/navbar.ejs") %>
+        <br><br><br><br><br><br><br>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper" style="text-align: center; font-family: Georgia, serif;">
+            <em><strong>
+                    <h1>Explore Fields</h1>
+                    <p>Les personnes recherchant des options au Maroc ont aussi réservé ici</p>
+                </strong></em>
+            <div class="swiper-wrapper">
+                <% nestedArray.forEach(function(item) { %>
+                    <div class="swiper-slide" style="align-items: center;">
+                        <img src="<%= item[0] %>" class="reflect" width="300px" height="300px" />
+                        <form action="/calendar" method="get"><button type="submit" class="transparent-button field-name" name="action" value="<%= item[1] %>">
+                            <%= item[1] %>
+                        </button></form>
+                    </div>
+                    
+                <% }); %>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- Card Section -->
+        <div class="container mt-5">
+            <div style="text-align: center; font-family: Georgia, serif;">
+                <em><strong>
+                        <h2 class="text-center mb-4" style="font-family: Georgia, serif;">Trending Destinations <img src="/images/trending-topic.png" width="30"  height="30"></h2>
+                        <p style="font-family: Georgia, serif;">Ces destinations prisées ont beaucoup à offrir</p>
+                    </strong></em>
+            </div>
+            
+                <div class="row">
+                    <% let usedIndices=[]; for (var j=0; j < 3; j++) { let i; do { i=Math.floor(Math.random() * nestedArray.length); }
+                        while (usedIndices.includes(i)); usedIndices.push(i); %>
+                        <!-- Card 1 -->
+                        <div class="col-md-4 mb-4">
+                            
+                                <div class="card text-bg-dark" name="action" value="<%= nestedArray[i][2] %>" >
+                                    <div class="card-img-overlay dark-overlay"></div>
+                                    <img src="<%= nestedArray[i][0] %>" class="card-img" height="300px" width="300px" alt="Card Image <%= j+1 %>">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">
+                                            <%= nestedArray[i][1] %> <img src="/images/Flag_of_Morocco.svg.png" height="16" width="24" alt="">
+                                        </h5>
+                                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <% } %>
+                </div>
+            
+        </div>
+
+        <!-- Customer Satisfaction Section -->
+        <div class="customer-satisfaction mt-5">
+            <div class="container text-center">
+                <h2>Customer Satisfaction</h2>
+                <p>Most of our customers are absolutely thrilled with their experiences! We are dedicated to delivering
+                    exceptional service and creating memorable moments for each and every guest. From the moment you
+                    book with us to the end of your journey, our team is committed to ensuring your satisfaction. We
+                    take great pride in the positive feedback we receive and continually strive to enhance our
+                    offerings. Our goal is to exceed your expectations and make every experience unforgettable. Join the
+                    many satisfied customers who have enjoyed our top-notch services and see for yourself why we are
+                    highly recommended.</p>
+            </div>
+            <br><br>
+        </div>
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+            <% const d=new Date(); let year=d.getFullYear(); %>
+                <p>Copyright © <%= year %>
+                </p>
+            
+        </footer>
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 15,
+                    stretch: 0,
+                    depth: 300,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                loop: true,
+            });
+        </script>
+</body>
+</html>

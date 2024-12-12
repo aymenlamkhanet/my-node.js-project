@@ -1,0 +1,207 @@
+<%- include("partials/header.ejs") %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .bg,
+    .bg2,
+    .bg3 {
+        position: fixed;
+        top: 0;
+        left: -50%;
+        right: -50%;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #6c3 50%, #388E3C 50%);
+        opacity: .5;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>
+    <%- include("partials/navbar.ejs") %>
+
+        <br><br><br><br>
+
+        
+        <% if (actionll==='login' ) { %>
+            
+
+            <div class="p-5 text-center bg-body->
+                <div class="container py-5">
+                    <em><h1 class="text-body-emphasis">Welcome Back!</h1></em>
+                    <p class="col-lg-8 mx-auto lead">Log in to continue accessing your account.</p>
+                </div>
+            </div>
+            
+            <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+                <div class="row align-items-center g-lg-5 py-5">
+                    <div class="col-md-10 mx-auto col-lg-5">
+                        <% if (typeof error !=='undefined' ) { %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= error %>
+                            </div>
+                        <% } %>
+                        <form class="p-4 p-md-5 border rounded-3 white-bg-transparent" method="post" action="/check">
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com" required>
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" name="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password" required >
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <button class="w-100 btn btn-lg btn-primary" type="submit"  name="action" value="login">Login</button>
+                            <hr class="my-4">
+                            <small class="text-body-secondary">En cliquant sur Envoyer, vous acceptez les conditions
+                                d'utilisation.</small>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .white-bg-transparent {
+                    background-color: rgba(255, 255, 255, 0.123);
+                    /* Adjust 0.8 to the desired opacity level */
+                }
+
+                input:focus:invalid {
+                    box-shadow: 0 0 20px red;
+                }
+
+            </style>
+            <% } else if(actionll==='sign-up') { %>
+                    <div class="p-5 text-center bg-body-tertiary>
+                        <div class="container py-5">
+                            <em><h1 class="text-body-emphasis">Create an Account</h1></em>
+                            <p class="col-lg-8 mx-auto lead">Sign up to get started with our services.</p>
+                        </div>
+                    </div>
+                <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+                    <div class="row align-items-center g-lg-5 py-5">
+                        <div class="col-md-10 mx-auto col-lg-5">
+                            <form class="p-4 p-md-5 border rounded-3 white-bg-transparent" method="post" action="/check">
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="fullname" class="form-control" id="fullName" placeholder="Full Name" required> 
+                                    <label for="fullName">Nom & Prenom</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="tel" name="phone" class="form-control" id="phoneNumber" placeholder="Phone Number" required>
+                                    <label for="phoneNumber">Telephone</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" name="email" class="form-control" id="signupEmail"
+                                        placeholder="name@example.com" required>
+                                    <label for="signupEmail">Email address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" name="password" class="form-control" id="signupPassword"
+                                        placeholder="Password" required minlength="6" maxlength="12">
+                                    <label for="signupPassword">Password</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" name="password1" class="form-control" id="signupPassword1" placeholder="Password" minlength="6" maxlength="12" required >
+                                    <label for="signupPassword">Confirm Password</label>
+                                </div>
+                                <div class="form-check text-start my-3">
+                                    <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault" required>
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        <a href="/regles">Check to agree all Cokkies !</a>
+                                    </label>
+                                </div>
+                                <button class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="sign-up">Sign-up</button>
+                                <hr class="my-4">
+                                <small class="text-body-secondary">En cliquant sur Envoyer, vous acceptez les conditions
+                                    d'utilisation.</small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .white-bg-transparent {
+                        background-color: rgba(255, 255, 255, 0.123);
+                        /* Adjust 0.8 to the desired opacity level */
+                    }
+                    input:focus:invalid {
+                    box-shadow: 0 0 20px red;
+                }
+                </style>
+                <% }  else if(actionll==='connect') { %> 
+
+                    <div class="p-5 text-center " >
+                        <div class="container py-5">
+                            <em><h1 class="text-body-emphasis">Bienvenue sur votre compte</h1></em>
+                            <p class="col-lg-8 mx-auto lead">Inscrivez-vous pour gérer votre travail.</p>
+                        </div>
+                    </div>
+                    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+                        <div class="row align-items-center g-lg-5 py-5">
+                            <div class="col-md-10 mx-auto col-lg-5">
+                                <% if (typeof error !=='undefined' ) { %>
+                                    <div class="alert alert-danger" role="alert">
+                                        <%= error %>
+                                    </div>
+                                    <% } %>
+                                <form class="p-4 p-md-5 border rounded-3 white-bg-transparent" method="post" action="check">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                                        <label for="floatingInput">Email address</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" name="password" class="form-control" id="signupPassword"
+                                            placeholder="Password" required>
+                                        <label for="signupPassword">Password</label>
+                                    </div>
+                                    <button class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="connect">Se
+                                        Connecter</button>
+                                    <hr class="my-4">
+                                    <small class="text-body-secondary">En cliquant sur Envoyer, vous acceptez les conditions
+                                        d'utilisation.</small>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+<style>
+    .white-bg-transparent {
+    background-color: rgba(255, 255, 255, 0.116); /* Adjust 0.8 to the desired opacity level */
+}
+input:focus:invalid {
+                    box-shadow: 0 0 20px red;
+                }
+</style>
+
+                <% } %>
+
+                    <br><br><br><br><br>
+                
+<%- include("partials/footer.ejs") %>

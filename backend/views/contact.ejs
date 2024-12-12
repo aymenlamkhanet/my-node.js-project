@@ -1,0 +1,106 @@
+<%- include("partials/header.ejs") %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .bg,
+    .bg2,
+    .bg3 {
+        position: fixed;
+        top: 0;
+        left: -50%;
+        right: -50%;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #6c3 50%, #388E3C 50%);
+        opacity: .5;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>
+<%- include("partials/navbar.ejs") %>
+<div class="container marketing" style="margin-top: 200px;">
+    <div class="row">
+        <div class="col-lg-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="currentColor" class="bi bi-geo-alt-fill"
+                viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+            </svg>
+            <h2 class="fw-normal">Adresse</h2>
+            <p>Nous sommes idéalement situés pour vous servir au cœur de khouribga, assurant un accès facile à nos
+            installations et services.</p>
+            <strong style="color: #000000!important;" >mail Cetral</strong>
+            <p><a class="btn btn-outline-success" style="margin-top:10px"  onclick="window.location.href='https://www.google.com/maps?q=32.882194,-6.897833'">Open Location in Google Maps »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="currentColor" class="bi bi-envelope-at-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
+                <path
+                    d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
+            </svg>
+            <h2 class="fw-normal">EMAIL</h2>
+            <p>Pour une réponse rapide et détaillée, contactez-nous par email. Nous traitons toutes les demandes avec efficacité et
+            professionnalisme pour votre entière satisfaction.
+            </p>
+            <strong style="color: #000000!important; " >aymen.lamkhanet.07@gmail.com</strong>
+            <p><a class="btn btn-outline-success" href="mailto:aymen.lamkhannet.07@gmail.com?subject=Your%20Subject&body=Your%20Message" style="margin-top:10px">send Email »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="currentColor" class="bi bi-telephone-fill"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+            </svg>
+            <h2 class="fw-normal">Telephone</h2>
+            <p>Notre équipe est joignable par téléphone pendant les heures de bureau, prête à répondre à vos appels et à fournir une
+            assistance personnalisée.</p>
+            <strong style="color: #000000!important;" >07.01.81.35.82</strong>
+            <p><a class="btn btn-outline-success"  n onclick="window.location.href='https://wa.me/212701813582?text=Hello!'" style="margin-top:10px">Conversation on WhatsApp »</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div>
+</div>
+<br><br><br><br>
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <em><h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Contactez-nous</h1></em>
+            <p class="col-lg-10 fs-4">Pour toute question ou demande d'assistance, n'hésitez pas à nous contacter</p>
+        </div>
+        
+    </div>
+</div>
+ 
+<br><br><br><br><br><br><br><br>
+<%- include("partials/footer.ejs") %>

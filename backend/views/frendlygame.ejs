@@ -1,0 +1,126 @@
+<%- include("partials/header.ejs") %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .bg,
+    .bg2,
+    .bg3 {
+        position: fixed;
+        top: 0;
+        left: -50%;
+        right: -50%;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #6c3 50%, #388E3C 50%);
+        opacity: .5;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+        
+    }
+
+    .white-bg-transparent {
+    background-color: rgba(255, 255, 255, 0); /* Adjust 0.8 to the desired opacity level */
+}
+</style>
+<%- include("partials/navbar.ejs") %>
+
+<br><br><br><br><br><br><br><br><br><br>
+<em><h1 class="display-4 fw-bold text-body-emphasis" style="color: #ffffff !important; display:flex; justify-content:space-around;">FriendlyGames</h1></em>
+<div class="container marketing">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <div class="container my-5">
+            <div class="position-relative p-5 text-center text-muted  rounded-5 white-bg-transparent">                
+                <em><<h1 class="text-body-emphasis">Discover Our Friendly Games and Join the Fun!</h1></em>
+                <p class="col-lg-6 mx-auto mb-4">
+                Explore exciting friendly games that bring together players of all levels. Whether you're looking to compete or simply
+                enjoy a friendly match, our fields offer the perfect setting for unforgettable moments on the pitch.
+                </p>
+                <a href="/reserv"><button class="btn btn-outline-success px-5 mb-5" type="button">
+                    Reserver Vite!
+                </button></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <img src="/images/frendly-img1.jpg" width="500px" height="500px" alt="" class="rounded" style="box-shadow: 10px 10px 10px rgb(112, 119, 116);  margin-top :40px; ">
+    </div>
+</div>
+
+<div class="row featurette">
+        <div class="col-md-7">
+            <div class="container my-5">
+                <div class="position-relative p-5 text-center text-muted white-bg-transparent  rounded-5">
+                    <em><h1 class="text-body-emphasis">Join Our Community of Passionate Players</h1></em>
+                    <p class="col-lg-6 mx-auto mb-4">
+                    Become part of a vibrant community of football enthusiasts. Whether you're a seasoned player or
+                    just starting out, our friendly games and match opportunities provide a welcoming environment to hone your
+                    skills and connect with like-minded individuals.
+                    </p>
+                    <a href="/reserv"><button class="btn btn-outline-success px-5 mb-5" type="button">
+                            Reserver Vite!
+                        </button></a>
+                </div>
+            </div>
+        </div>
+    <div class="col-md-5 order-md-1">
+        <img src="/images/frendly-img2.jpg" width="500px" height="500px" alt="" class="rounded " style="box-shadow: 10px 10px 10px rgb(112, 119, 116);  margin-top :40px; ">
+    </div>
+</div>
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <div class="container my-5">
+            <div class="position-relative p-5 text-center text-muted white-bg-transparent rounded-5">
+                <em><h1 class="text-body-emphasis">Experience Unmatched Excitement on the Field</h1></em>
+                <p class="col-lg-6 mx-auto mb-4">
+                    Immerse yourself in the thrill of competitive matches and friendly encounters. Our
+                    well-maintained fields and diverse game options ensure that every game day is filled with excitement,
+                    camaraderie, and unforgettable memories.
+                </p>
+                <a href="/reserv"><button class="btn btn-outline-success px-5 mb-5" type="button">
+                        Reserver Vite!
+                    </button></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <img src="/images/frendly-img3.jpg" width="500px" height="500px" alt="" class="rounded" style="box-shadow: 10px 10px 10px rgb(112, 119, 116); margin-top :40px;">
+    </div>
+</div>
+
+</div>
+
+<br><br><br><br><br>
+<%- include("partials/footer.ejs") %>

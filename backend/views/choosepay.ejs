@@ -1,0 +1,87 @@
+<%- include("partials/header.ejs") %>
+
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <!-- Modal Section -->
+            <div class="col-lg-8">
+                <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog"
+                    id="modalChoice">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content rounded-3 shadow">
+                            <div class="modal-body p-4 text-center">
+                                <h5 class="mb-3">How would you like to complete your payment today?</h5>
+                                <p class="mb-3">Please select one of the following options:</p>
+                            </div>
+                            <div class="modal-footer flex-nowrap p-0">
+                                <form id="creditCardForm" action="/mode" method="get" style="display: inline;">
+                                    <input type="hidden" name="user" value="<%= user %>" />
+                                    <input type="hidden" name="field" value="<%= field %>" />
+                                    <input type="hidden" name="date" value="<%= date %>" />
+                                    <input type="hidden" name="start" value="<%= start %>" />
+                                    <input type="hidden" name="end" value="<%= end %>" />
+                                    <input type="hidden" name="fieldPrice" value="<%= fieldPrice %>" />
+                                </form>
+                                <form id="cashForm" action="/mode1" method="get" style="display: inline;">
+                                    <input type="hidden" name="user" value="<%= user %>" />
+                                    <input type="hidden" name="field" value="<%= field %>" />
+                                    <input type="hidden" name="date" value="<%= date %>" />
+                                    <input type="hidden" name="start" value="<%= start %>" />
+                                    <input type="hidden" name="end" value="<%= end %>" />
+                                    <input type="hidden" name="fieldPrice" value="<%= fieldPrice %>" />
+                                </form>
+                                <button type="button"
+                                    class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end"
+                                    onclick="document.getElementById('creditCardForm').submit();">
+                                    <strong>Pay with Credit Card</strong>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0"
+                                    onclick="document.getElementById('cashForm').submit();">
+                                    <strong>Pay with Cash</strong>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="col-lg-4">
+                <div class="card rounded-3 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3">Payment Information</h4>
+                        <div class="text-start">
+                            <h6><strong>Pay with Credit Card:</strong></h6>
+                            <img src="/images/visa.png" height="40" width="40">
+                            <img src="/images/mastercard.png" height="50" width="50">
+                            <img src="/images/paypal.png" height="40" width="40">
+                            <img src="/images/discover.png" height="50" width="50">
+                            <img src="/images/bmce.png" height="40" width="40">
+                            <img src="/images/cih-logo.jpg" height="60" width="50">
+                            <ul>
+                                <li>Convenience:</li>
+                                <li>Security:</li>
+                                <li>Instant Confirmation:</li>
+                                <li>Accepted Cards:</li>
+                                <li>Receipt:</li>
+                            </ul>
+                            <h6><strong>Pay with Cash:</strong></h6>
+                            <img src="/images/moneygram.png" height="30" width="110" style="margin: 10px;">
+                            <img src="/images/westerunion.png" height="30" width="100">
+                            <ul>
+                                <li>Flexibility:</li>
+                                <li>No Additional Fees:</li>
+                                <li>Payment Location:</li>
+                                <li>Confirmation:</li>
+                                <li>Receipt:</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <%- include("partials/footer.ejs") %>

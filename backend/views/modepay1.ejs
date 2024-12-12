@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 17px;
+            padding: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-25 {
+            -ms-flex: 25%;
+            /* IE10 */
+            flex: 25%;
+        }
+
+        .col-50 {
+            -ms-flex: 50%;
+            /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%;
+            /* IE10 */
+            flex: 75%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #2196F3;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+        @media (max-width: 800px) {
+            .row {
+                flex-direction: column-reverse;
+            }
+
+            .col-25 {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Cash Payment Form</h2>
+    <p>Thank you for choosing FootyFieldReserve for your reservation needs. We are honored by your trust and are
+        committed
+        to providing you with the best experience. If you have any questions or need further assistance, please don't
+        hesitate
+        to reach out. Your satisfaction is our top priority, and we look forward to serving you!</p>
+    <div class="row">
+        <div class="col-75">
+            <div class="container">
+                <form action="/addpay1" method="post">
+
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>Business Information</h3>
+                            <label for="bname">Business Name</label>
+                            <input type="text" id="bname" name="businessname" value="<%= nestedArray[0][0] %>"readonly>
+                            <label for="tdate">Date of Transaction</label>
+                            <input type="text" id="tdate" name="transactiondate" placeholder="DD/MM/YYYY">
+                            <label for="rnumber">Receipt Number</label>
+                            <input type="text" id="rnumber" name="receiptnumber" value="<%= nestedArray[0][1] %>"readonly>
+                        </div>
+
+                        <div class="col-50">
+                            <h3>Customer Information</h3>
+                            <label for="cname"><i class="fa fa-user"></i> Customer Name </label>
+                            <input type="text" id="cname" name="customername" value="<%= user %>"readonly>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>Transaction Details</h3>
+                            <label for="description">Description of Goods or Services</label>
+                            <input type="text" id="description" value="<%= field %>"  name="description"
+                                placeholder="Football field reservation" readonly>
+                            <label for="total">Total Amount Paid</label>
+                            <input type="text" id="total" name="totalamount" value="<%= fieldPrice %>" readonly>
+                        </div>
+
+                        <div class="col-50">
+                            <h3>Payment Information</h3>
+                            <label for="paymentmethod">Payment Method</label>
+                            <input type="text" id="paymentmethod" name="paymentmethod" placeholder="Cash" value="Cash"
+                                readonly>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Confirm payment" class="btn">
+                
+            </div>
+        </div>
+        <div class="col-25">
+            <div class="container">
+                <h4>Field Information</h4>
+                <p><a href="#">Field Name</a> <span class="price">
+                        <%= field %>
+                    </span></p>
+                <p><a href="#">Date</a> <span class="price">
+                        <%= date %>
+                    </span></p>
+                    <input type="hidden" name="date" value="<%= date %>">
+                <p><a href="#">Start Time</a> <span class="price">
+                        <%= start %>
+                    </span></p>
+                    <input type="hidden" name="start" value="<%= start %>">
+                <p><a href="#">End Time</a> <span class="price">
+                        <%= end %>
+                    </span></p>
+                <hr>
+                <p>Price Per Hour<span class="price" style="color:black"><b>
+                            <%= fieldPrice %>
+                        </b></span></p>
+                        <input type="hidden" name="fieldPrice" value="<%= fieldPrice %>">
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+
+</html>

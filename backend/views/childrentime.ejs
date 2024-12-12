@@ -1,0 +1,132 @@
+<%- include("partials/header.ejs") %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .bg,
+    .bg2,
+    .bg3 {
+        position: fixed;
+        top: 0;
+        left: -50%;
+        right: -50%;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #6c3 50%, #388E3C 50%);
+        opacity: .5;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>
+<%- include("partials/navbar.ejs") %>
+<br><br><br><br><br>
+<em><h1 class="display-4 fw-bold text-body-emphasis"
+    style="color: #ffffff !important; display:flex; justify-content:space-around;">FootyFieldReserve</h1></em>
+<br><br><br>
+
+<div class="container px-4 py-5" id="custom-cards">
+    <em><h2 class="pb-2 border-bottom" style="color: #388E3C !important;">Children-Time</h2></em>
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('/images/child-1.jpg');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="color: #ffffff !important; text-shadow: 
+        1px 1px 0px black, 
+        -1px -1px 0px black,
+        -1px 1px 0px black,
+        1px -1px 0px black;">Unlock Joyful Adventures</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('/images/child-2.webp');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="color: #ffffff !important; text-shadow: 
+        1px 1px 0px black, 
+        -1px -1px 0px black,
+        -1px 1px 0px black,
+        1px -1px 0px black;">Unlock Joyful Adventures</h3>
+                </div>
+            </div> 
+        </div>
+
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('/images/child-3.jpg');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="color: #ffffff !important; text-shadow: 
+        1px 1px 0px black, 
+        -1px -1px 0px black,
+        -1px 1px 0px black,
+        1px -1px 0px black;">Unlock Joyful Adventures</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-5">
+    <div class="p-5 text-center  rounded-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-balloon-fill"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8.48 10.901C11.211 10.227 13 7.837 13 5A5 5 0 0 0 3 5c0 2.837 1.789 5.227 4.52 5.901l-.244.487a.25.25 0 1 0 .448.224l.04-.08c.009.17.024.315.051.45.068.344.208.622.448 1.102l.013.028c.212.422.182.85.05 1.246-.135.402-.366.751-.534 1.003a.25.25 0 0 0 .416.278l.004-.007c.166-.248.431-.646.588-1.115.16-.479.212-1.051-.076-1.629-.258-.515-.365-.732-.419-1.004a2 2 0 0 1-.037-.289l.008.017a.25.25 0 1 0 .448-.224zM4.352 3.356a4 4 0 0 1 3.15-2.325C7.774.997 8 1.224 8 1.5s-.226.496-.498.542c-.95.162-1.749.78-2.173 1.617a.6.6 0 0 1-.52.341c-.346 0-.599-.329-.457-.644" />
+        </svg>
+        <em><h1 class="text-body-emphasis">Enjoy! </h1></em>
+        <p class="col-lg-8 mx-auto fs-5 text-muted">Reserving a playground space for your children at our Children's Time Espace isn't just about securing a spot—it's about
+        creating unforgettable moments filled with joy and adventure. Imagine your child's face lighting up as they explore our
+        safe and engaging play areas, designed to stimulate their imagination and physical development. Our meticulously crafted
+        environment offers a blend of thrilling activities and educational opportunities, ensuring every visit is both
+        fun-filled and enriching. From interactive play structures to supervised activities that promote social skills, each day
+        promises new discoveries and friendships. Join us in making childhood memories magical, where laughter echoes and
+        curiosity thrives. Experience the wonder of childhood firsthand—reserve your child's playground adventure today!
+        </p>
+        <div class="d-inline-flex gap-2 mb-5">
+            <a href="/reserv"><button class="d-inline-flex align-items-center btn btn-outline-success btn-lg px-4 rounded-pill" type="button">
+                Reserver Vite!
+            </button></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<br><br><br><br>
+<%- include("partials/footer.ejs") %>

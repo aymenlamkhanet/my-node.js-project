@@ -1,0 +1,105 @@
+<%- include("partials/header.ejs") %>
+<br>
+
+<div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-12 mb-4">
+            <div class="d-flex flex-column flex-shrink-0 p-3 rounded" style="width: 100%;">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <svg class="bi pe-none me-2" width="20" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4">FootyFieldReserve</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li>
+                        <a href="#" id="home" class="nav-link link-body-emphasis">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#home"></use>
+                            </svg>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/boss" id="field" class="nav-link active">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#speedometer2"></use>
+                            </svg>
+                            Field
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="payement" class="nav-link link-body-emphasis">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#table"></use>
+                            </svg>
+                            Payment
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/add" id="addfield" class="nav-link link-body-emphasis">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#grid"></use>
+                            </svg>
+                            Add Field
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="customers" class="nav-link link-body-emphasis">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Customers
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/images/741.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <strong>Boss</strong>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-12">
+            <section class="py-5 text-center container" style="padding: 0% !important;">
+                <div class="row py-lg-5">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <strong><em>
+                            <h1>WELCOME TO <%= nestedArray[i][1] %></h1>
+                        </em></strong>
+                    </div>
+                </div>
+            </section>
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                        <img src="<%= nestedArray[i][5] %>" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><%= nestedArray[i][1] %> Stadium</h1>
+                        <p class="lead"><%= nestedArray[i][1] %> field is localized on <%= nestedArray[i][2] %>.
+                            Ce terrain est caractérisé par <%= nestedArray[i][3] %>.
+                            Son prix par heure est estimé à <%= nestedArray[i][4] %>.
+                        </p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="/boss"><button type="button" class="btn btn-outline-success btn-lg px-4 me-md-2">Back</button></a>
+                            <button type="button" class="btn btn-outline-success btn-lg px-4">Reserve Vite</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br>
+<%- include("partials/footer.ejs") %>

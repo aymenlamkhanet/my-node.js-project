@@ -1,0 +1,102 @@
+<%- include("partials/header.ejs") %>
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .bg,
+    .bg2,
+    .bg3 {
+        position: fixed;
+        top: 0;
+        left: -50%;
+        right: -50%;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #6c3 50%, #388E3C 50%);
+        opacity: .5;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>
+<%- include("partials/navbar.ejs") %>
+<br><br>
+
+<div class="px-4 py-5 my-5 text-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-award-fill"
+        viewBox="0 0 16 16">
+        <path
+            d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864z" />
+        <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
+    </svg>
+    <br><br>
+    <h1 class="display-5 fw-bold text-body-emphasis">FootyFieldReserve</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Unveiling FootyFieldReserve: Revolutionizing Online Field Reservations in Sports: <br><br>
+        <br><em><strong>History and Founding</strong></em><br>
+        FootyFieldReserve emerges as a transformative platform in the realm of sports field reservations, catering to the
+        evolving needs of athletes and sports enthusiasts globally. Conceptualized with a vision to streamline and enhance the
+        booking experience, the platform was founded by forward-thinking technologists passionate about sports and technology.
+        From its inception, FootyFieldReserve has been dedicated to bridging the gap between convenience and community
+        engagement in recreational sports. <br>
+
+        <br><em><strong>Commitment to Innovation and Accessibility</strong></em><br>
+        Driven by a commitment to innovation, FootyFieldReserve offers a seamless online interface that allows users to
+        effortlessly book sports fields and facilities. The platform's user-friendly design and robust features simplify the
+        reservation process, ensuring that athletes can focus more on their game and less on logistics. This dedication to
+        accessibility has made FootyFieldReserve a preferred choice among sports clubs, schools, and recreational centers
+        worldwide. <br>
+
+        <br><em><strong>Strategic Partnerships and Global Reach</strong></em><br>
+        FootyFieldReserve's success is bolstered by strategic partnerships with sports clubs, facility managers, and technology
+        providers. These collaborations have not only expanded the platform's reach but also enriched its offerings with
+        cutting-edge amenities and services. By forging alliances with industry leaders, FootyFieldReserve continues to innovate
+        and elevate the sports booking experience for users across borders.  <br>
+
+        <br><em><strong>Empowering Communities and Future Prospects</strong></em><br>
+        Beyond its technological advancements, FootyFieldReserve remains committed to empowering local communities. The platform
+        supports grassroots sports initiatives and community-based programs, fostering a culture of inclusivity and wellness.
+        Looking ahead, FootyFieldReserve aims to enhance its platform further, integrating advanced features and sustainable
+        practices that align with its core values of efficiency and environmental stewardship.   <br>
+        
+        <br><em><strong>Conclusion</strong></em><br>
+        FootyFieldReserve exemplifies how innovation, strategic partnerships, and a commitment to community can redefine the
+        landscape of sports field reservations. As it continues to grow and evolve, FootyFieldReserve stands poised to
+        revolutionize how athletes and sports enthusiasts engage with recreational facilities, enhancing accessibility and
+        promoting active lifestyles worldwide.</p>  <br>
+    </div>
+</div>
+
+
+
+<br><br><br><br>
+<%- include("partials/footer.ejs") %>

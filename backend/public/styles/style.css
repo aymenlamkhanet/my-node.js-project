@@ -1,0 +1,79 @@
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+.profile-img {
+    border: 7px solid #4CAF50;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411);
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin: 10px;
+}
+
+
+.profile-container {
+    background-color: #ecf0f1;
+    /* Light grey background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.452);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.profile-img {
+    border: 7px solid #4CAF50;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.473);
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    margin: 10px auto;
+
+
+}
+
+.profile-heading {
+    font-weight: 600;
+    font-style: italic;
+    color: #2c3e50;
+    /* Dark blue color */
+    margin-bottom: 10px;
+}
+
+.profile-paragraph {
+    font-size: 1.1em;
+    color: #34495e;
+    /* Darker shade for text */
+    line-height: 1.6;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    -webkit-box-reflect:  below 1px linear-gradient(transparent,transparent,#0002,#0004);
+}
